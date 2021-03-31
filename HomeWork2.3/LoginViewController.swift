@@ -20,20 +20,22 @@ class LoginViewController: UIViewController {
         guard let welcomeVS = segue.destination as? WelcomeViewController else {return}
         welcomeVS.userWelcome = user
     }
+    
         let user = "Test"
         let pass = "Qwerty1"
     
     @IBAction func forgetUserName(_ sender: Any) {
         let alert = UIAlertController(title: "You're user name", message: "\(user)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-        NSLog("The \"OK\" alert occured.")
+        NSLog("The \"UserName\" alert occured.")
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
     @IBAction func forgetPassword(_ sender: Any) {
         let alert = UIAlertController(title: "You're password", message: "\(pass)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-        NSLog("The \"OK\" alert occured.")
+        NSLog("The \"Password\" alert occured.")
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -44,15 +46,10 @@ class LoginViewController: UIViewController {
         if enterUserName != user || enterPassword != pass{
             let alert = UIAlertController(title: "Ошибка", message: "Не верный логин или пароль", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
+            NSLog("Возникло предупреждение об не верном пароле")
             }))
             self.present(alert, animated: true, completion: nil)
         }
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
-    }
-    
-    
 }
 

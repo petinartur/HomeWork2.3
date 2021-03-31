@@ -17,9 +17,6 @@ class WelcomeViewController: UIViewController {
         welcomeMessage.text = "Hi! \(userWelcome)"
         }
     
-
-
-    
     @IBAction func logout(_ sender: UIButton) {
         dismiss(animated: true)
     }
