@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"UserName\" alert occured.")
         }))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func forgetPassword(_ sender: Any) {
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"Password\" alert occured.")
         }))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func loginButton(_ sender: Any) {
@@ -48,7 +48,8 @@ class LoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("Возникло предупреждение об не верном пароле")
             }))
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
+            password.text = ""
         }
     }
 }
